@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: "Kumbh Sans";
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(hsl(273, 75%, 66%) 0%, hsl(240, 73%, 65%) 100%)
+    center center no-repeat fixed;
+  background-size: cover;
+}
+
+h1 {
+  margin: 0.5em 0;
+  color: hsl(238, 29%, 16%);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+/* Layout */
+
+.container {
+  width: min(90%, 900px);
+  padding: 1.5em;
+  border-radius: 25px;
+  margin: 8em 0 4em 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin: 0 auto;
+}
+
+img[src="images/illustration-woman-online-mobile.svg"] {
+  width: 275px;
+  margin: -9.5em 0 2.5em 0;
+}
+
+img[src="images/illustration-woman-online-desktop.svg"],
+img[src="images/illustration-box-desktop.svg"] {
+  display: none;
+}
+
+/* Accordions */
+
+.accordion {
+  padding: 1.25em 0.5em;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  cursor: pointer;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-title {
+  color: hsl(237, 12%, 33%);
+  transition: color 0.2s;
+}
+
+.accordion-expanded .accordion-title {
+  color: hsl(238, 29%, 16%);
+  font-weight: bold;
+}
+
+.accordion-arrow {
+  width: 12px;
+}
+
+.accordion-expanded .accordion-arrow {
+  transform: scaleY(-1);
+}
+
+.accordion-body {
+  display: none;
+  color: hsl(240, 6%, 50%);
+}
+
+.accordion-expanded .accordion-body {
+  display: block;
+  margin: 1em 0;
+}
+
+.accordion:hover .accordion-title,
+.accordion:focus .accordion-title {
+  color: hsl(14, 88%, 65%);
+}
+
+/* Media Query */
+
+@media (min-width: 1000px) {
+  h1 {
+    text-align: start;
+    padding: 0.175em;
+  }
+
+  .container {
+    flex-direction: row;
+    padding: 4em 5em 5em 0;
+    overflow: hidden;
+  }
+
+  header,
+  #faq {
+    width: 50%;
+    min-height: 100%;
+  }
+
+  img[src="images/illustration-woman-online-mobile.svg"] {
+    display: none;
+  }
+
+  img[src="images/illustration-woman-online-desktop.svg"] {
+    display: inline-block;
+    margin-left: -5.5em;
+    margin-top: 2em;
+  }
+
+  img[src="images/illustration-box-desktop.svg"] {
+    position: absolute;
+    display: inline-block;
+    margin-left: -32em;
+    margin-top: 9.5em;
+  }
+}
