@@ -97,12 +97,14 @@ img[src="images/illustration-box-desktop.svg"] {
 }
 
 .accordion-body {
-  display: none;
+  height: 0;
+  overflow: hidden;
   color: hsl(240, 6%, 50%);
+  transition: all 0.3s ease;
 }
 
 .accordion-expanded .accordion-body {
-  display: block;
+  height: auto;
   margin: 1em 0;
 }
 
